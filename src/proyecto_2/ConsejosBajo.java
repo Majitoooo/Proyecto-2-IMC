@@ -150,7 +150,8 @@ public class ConsejosBajo extends javax.swing.JFrame {
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
 
-        
+    TablasBajo tablasBajo = new TablasBajo();
+    tablasBajo.setVisible(true);
   
     }//GEN-LAST:event_btnGraficosActionPerformed
 

@@ -160,7 +160,8 @@ public class ConsejosNormal extends javax.swing.JFrame {
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
 
-        
+    TablasNormal tablasNormal = new TablasNormal();
+    tablasNormal.setVisible(true);   
   
     }//GEN-LAST:event_btnGraficosActionPerformed
 

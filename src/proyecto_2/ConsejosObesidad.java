@@ -150,7 +150,8 @@ public class ConsejosObesidad extends javax.swing.JFrame {
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
 
-        
+    TablasObesidad tablasObesidad = new TablasObesidad();
+    tablasObesidad.setVisible(true);      
   
     }//GEN-LAST:event_btnGraficosActionPerformed
 

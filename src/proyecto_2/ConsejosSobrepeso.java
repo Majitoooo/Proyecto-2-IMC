@@ -132,7 +132,7 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
 
-
+    
     }//GEN-LAST:event_btnHistorialActionPerformed
 
     private void btnSaludableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaludableActionPerformed
@@ -150,7 +150,8 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
 
-        
+    TablasSobrepeso tablasSobrepeso = new TablasSobrepeso();
+    tablasSobrepeso.setVisible(true);
   
     }//GEN-LAST:event_btnGraficosActionPerformed
 
