@@ -1,21 +1,38 @@
 package proyecto_2;
 
 import javax.swing.JOptionPane;
-import proyecto_2.CalculadoraIMC;
 
 public class ConsejosNormal extends javax.swing.JFrame {
+    
+    private String nombre;
+    private double resultadoIMC;
 
     public ConsejosNormal() {
         initComponents();
+    }
+    
+    public void setNombre(String nombre){
+     this.nombre = nombre;
+     txtNombre1.setText(nombre);
+    }
+    
+    public void setResultadoIMC(double resultadoIMC){
+        this.resultadoIMC = resultadoIMC;
+        tlbResultadoIMC1.setText(String.valueOf(resultadoIMC));
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
+        tlbResultadoIMC = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        tlbResultadoIMC1 = new javax.swing.JLabel();
+        txtNombre1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnHistorial = new javax.swing.JButton();
         btnSaludable = new javax.swing.JButton();
@@ -24,6 +41,14 @@ public class ConsejosNormal extends javax.swing.JFrame {
         btnGraficos = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnEjercicio = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setText("Tu IMC es ");
+
+        tlbResultadoIMC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        txtNombre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,9 +61,15 @@ public class ConsejosNormal extends javax.swing.JFrame {
         jLabel1.setText("¡Hola!");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 120, 40));
 
+        tlbResultadoIMC1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel2.add(tlbResultadoIMC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 30));
+
+        txtNombre1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel2.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 30));
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Tu rango es normal:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
 
         btnHistorial.setText("Ver Historial");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +117,10 @@ public class ConsejosNormal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnEjercicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 120, 90));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Tu IMC es ");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 312, -1, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
 
@@ -154,7 +189,13 @@ public class ConsejosNormal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel tlbResultadoIMC;
+    private javax.swing.JLabel tlbResultadoIMC1;
+    private javax.swing.JLabel txtNombre;
+    private javax.swing.JLabel txtNombre1;
     // End of variables declaration//GEN-END:variables
 }

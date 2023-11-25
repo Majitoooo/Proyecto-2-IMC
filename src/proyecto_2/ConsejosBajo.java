@@ -3,9 +3,22 @@ package proyecto_2;
 import javax.swing.JOptionPane;
 
 public class ConsejosBajo extends javax.swing.JFrame {
+    
+    private String nombre;
+    private double resultadoIMC;
 
     public ConsejosBajo() {
         initComponents();
+    }
+    
+    public void setNombre(String nombre){
+     this.nombre = nombre;
+     txtNombre.setText(nombre);
+    }
+    
+    public void setResultadoIMC(double resultadoIMC){
+        this.resultadoIMC = resultadoIMC;
+        tlbResultadoIMC.setText(String.valueOf(resultadoIMC));
     }
 
     @SuppressWarnings("unchecked")
@@ -14,8 +27,9 @@ public class ConsejosBajo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
+        tlbResultadoIMC = new javax.swing.JLabel();
         btnHistorial = new javax.swing.JButton();
         btnSaludable = new javax.swing.JButton();
         btnAlimentacion = new javax.swing.JButton();
@@ -23,6 +37,8 @@ public class ConsejosBajo extends javax.swing.JFrame {
         btnGraficos = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnEjercicio = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -31,13 +47,15 @@ public class ConsejosBajo extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("¡Hola!");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 120, 40));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("¡Hola!");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 120, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Tu rango es bajo peso:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
+        txtNombre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 30));
+
+        tlbResultadoIMC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel2.add(tlbResultadoIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 30));
 
         btnHistorial.setText("Ver Historial");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +103,14 @@ public class ConsejosBajo extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnEjercicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 120, 90));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setText("Tu rango es bajo peso:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setText("Tu IMC es ");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 312, -1, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
 
@@ -149,11 +175,14 @@ public class ConsejosBajo extends javax.swing.JFrame {
     private javax.swing.JButton btnGraficos;
     private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnSaludable;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel tlbResultadoIMC;
+    private javax.swing.JLabel txtNombre;
     // End of variables declaration//GEN-END:variables
 }

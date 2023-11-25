@@ -241,15 +241,23 @@ private double CalcularIMC(double peso, double altura) {
     
         if (imc < 18.5) {
             ConsejosBajo consejosBajo = new ConsejosBajo();
+            consejosBajo.setNombre(nombre);
+            consejosBajo.setResultadoIMC(imc);
             consejosBajo.setVisible(true);
        }else if (imc < 25) {
            ConsejosNormal consejosNormal = new ConsejosNormal();
+           consejosNormal.setNombre(nombre);
+           consejosNormal.setResultadoIMC(imc);
            consejosNormal.setVisible(true);
        }else if (imc < 30) {
            ConsejosSobrepeso consejosSobrepeso = new ConsejosSobrepeso();
+           consejosSobrepeso.setNombre(nombre);
+            consejosSobrepeso.setResultadoIMC(imc);
            consejosSobrepeso.setVisible(true);
        }else {
            ConsejosObesidad consejosObesidad = new ConsejosObesidad();
+           consejosObesidad.setNombre(nombre);
+           consejosObesidad.setResultadoIMC(imc);
            consejosObesidad.setVisible(true);
        }
     
