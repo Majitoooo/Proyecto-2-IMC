@@ -1,8 +1,12 @@
 package proyecto_2;
 
 import javax.swing.JOptionPane;
+import java.util.LinkedList;
 
 public class ConsejosBajo extends javax.swing.JFrame {
+    
+    private LinkedList<String> historialRecomendaciones = new LinkedList<>();
+
     
     private String nombre;
     private double resultadoIMC;
@@ -57,13 +61,13 @@ public class ConsejosBajo extends javax.swing.JFrame {
         tlbResultadoIMC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jPanel2.add(tlbResultadoIMC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 30));
 
-        btnHistorial.setText("Ver Historial");
+        btnHistorial.setText("Ver Informe");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
             }
         });
-        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, 60));
+        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 160, 60));
 
         btnSaludable.setText("Vida Saludable");
         btnSaludable.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +95,7 @@ public class ConsejosBajo extends javax.swing.JFrame {
                 btnGraficosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, 60));
+        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 210, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/WhatsApp Image 2023-06-18 at 11.18.32 AM.jpeg"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 290));
@@ -132,20 +136,37 @@ public class ConsejosBajo extends javax.swing.JFrame {
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
 
+          StringBuilder mensajeHistorial = new StringBuilder();
+        for (String recomendacion : historialRecomendaciones) {
+            mensajeHistorial.append(recomendacion).append("\n");
+        }
+
+        if (mensajeHistorial.length() == 0) {
+            mensajeHistorial.append("No se ha oprimido ningún botón.");
+        }
+
+        mensajeHistorial.append("\n\n"); // Agregar dos saltos de línea al final
+
+        JOptionPane.showMessageDialog(null, mensajeHistorial.toString());
+
 
     }//GEN-LAST:event_btnHistorialActionPerformed
 
     private void btnSaludableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaludableActionPerformed
 
+        String Recomendacion;
+        Recomendacion="\nRecomendaciones para una vida saludable \nCome porciones más grandes \n Ingiere alimentos con más frecuencia \n Incluye refrigerios nutritivos (como batidos de frutas, nueces y barras de granola)";
         JOptionPane.showMessageDialog(null,"Come porciones más grandes \n Ingiere alimentos con más frecuencia \n Incluye refrigerios nutritivos (como batidos de frutas, nueces y barras de granola)");
-
+       historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnSaludableActionPerformed
 
     private void btnAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlimentacionActionPerformed
 
+        String Recomendacion;
+        Recomendacion= "\nRecomendaciones para la alimentacion \nPrioriza los alimentos altos en nutrientes como: \n -Frutas \n -Verduras \n -Proteínas \n -Grasas saludables";
         JOptionPane.showMessageDialog(null, "Prioriza los alimentos altos en nutrientes como: \n -Frutas \n -Verduras \n -Proteínas \n -Grasas saludables");
-        
+        historialRecomendaciones.add(Recomendacion);        
     }//GEN-LAST:event_btnAlimentacionActionPerformed
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
@@ -157,7 +178,10 @@ public class ConsejosBajo extends javax.swing.JFrame {
 
     private void btnEjercicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicioActionPerformed
 
+        String Recomendacion;
+        Recomendacion="\nRecomendacion para hacer ejercicio  \n Realiza ejercicios de fuerza para desarrollar músculo y aumentar la masa corporal\n Implementa ejercicios cardiovasculares en tu rutina \n Realiza una rutina de 150 minutos \n Ve a un nutricionista \n Sigue las recomendaciones de tu médico ";
         JOptionPane.showMessageDialog(null, "Realiza ejercicios de fuerza para desarrollar músculo y aumentar la masa corporal\n Implementa ejercicios cardiovasculares en tu rutina \n Realiza una rutina de 150 minutos \n Ve a un nutricionista \n Sigue las recomendaciones de tu médico ");
+        historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnEjercicioActionPerformed
 

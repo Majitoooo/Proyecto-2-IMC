@@ -1,8 +1,11 @@
 package proyecto_2;
 
 import javax.swing.JOptionPane;
+import java.util.LinkedList;
 
 public class ConsejosSobrepeso extends javax.swing.JFrame {
+    
+    private LinkedList<String> historialRecomendaciones = new LinkedList<>();
 
     private String nombre;
     private double resultadoIMC;
@@ -65,13 +68,13 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
         tlbResultadoIMC1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jPanel2.add(tlbResultadoIMC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 30));
 
-        btnHistorial.setText("Ver Historial");
+        btnHistorial.setText("Ver Informe");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
             }
         });
-        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, 60));
+        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 160, 60));
 
         btnSaludable.setText("Vida Saludable");
         btnSaludable.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +102,7 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
                 btnGraficosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, 60));
+        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 210, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/WhatsApp Image 2023-06-18 at 11.18.32 AM.jpeg"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 290));
@@ -132,20 +135,37 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
 
-    
+                         StringBuilder mensajeHistorial = new StringBuilder();
+        for (String recomendacion : historialRecomendaciones) {
+            mensajeHistorial.append(recomendacion).append("\n");
+        }
+
+        if (mensajeHistorial.length() == 0) {
+            mensajeHistorial.append("No se ha oprimido ningún botón.");
+        }
+
+        mensajeHistorial.append("\n\n"); // Agregar dos saltos de línea al final
+
+        JOptionPane.showMessageDialog(null, mensajeHistorial.toString());
+        
     }//GEN-LAST:event_btnHistorialActionPerformed
 
     private void btnSaludableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaludableActionPerformed
 
+        String Recomendacion;
+        Recomendacion = "\nRecomendaciones para una vida saludable \n- Presta atención al tamaño de las porciones \n - Opta por alimentos más saludables \n - Pequeñas modificaciones pueden tener un impacto significativo con el tiempo.";
         JOptionPane.showMessageDialog(null,"- Presta atención al tamaño de las porciones \n - Opta por alimentos más saludables \n - Pequeñas modificaciones pueden tener un impacto significativo con el tiempo.");
-
+        historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnSaludableActionPerformed
 
     private void btnAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlimentacionActionPerformed
 
-        JOptionPane.showMessageDialog(null, " - Evita comer por estrés o aburrimiento. \n - Enfócate en la alimentación consciente \n - Planifica tus comidas con anticipación para evitar decisiones impulsivas.  \n - Incluye frutas, verduras, proteínas magras y granos enteros en tu dieta para satisfacer las necesidades nutricionales.");
-        
+        String Recomendacion;
+        Recomendacion = "\nRecomendaciones para la alimentacion \n- - Evita comer por estrés o aburrimiento. \n - Enfócate en la alimentación consciente \n - Planifica tus comidas con anticipación para evitar decisiones impulsivas.  \n - Incluye frutas, verduras, proteínas magras y granos enteros en tu dieta para satisfacer las necesidades nutricionales.";
+        JOptionPane.showMessageDialog(null,"- - Evita comer por estrés o aburrimiento. \n - Enfócate en la alimentación consciente \n - Planifica tus comidas con anticipación para evitar decisiones impulsivas.  \n - Incluye frutas, verduras, proteínas magras y granos enteros en tu dieta para satisfacer las necesidades nutricionales.");
+         historialRecomendaciones.add(Recomendacion);    
+         
     }//GEN-LAST:event_btnAlimentacionActionPerformed
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
@@ -157,7 +177,10 @@ public class ConsejosSobrepeso extends javax.swing.JFrame {
 
     private void btnEjercicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicioActionPerformed
 
-        JOptionPane.showMessageDialog(null, " - Incrementa gradualmente la actividad física. \n - Busca un equilibrio entre cardio y entrenamiento de fuerza. \n - Elige actividades físicas que disfrutes para hacer el ejercicio más sostenible. \n - Considera la posibilidad de consultar a un profesional de la salud o a un entrenador personal para obtener orientación personalizada y segura.");
+        String Recomendacion;
+        Recomendacion = " \nRecomendaciones para hacer ejercicio \n- Incrementa gradualmente la actividad física. \n - Busca un equilibrio entre cardio y entrenamiento de fuerza. \n - Elige actividades físicas que disfrutes para hacer el ejercicio más sostenible. \n - Considera la posibilidad de consultar a un profesional de la salud o a un entrenador personal para obtener orientación personalizada y segura.";
+        JOptionPane.showMessageDialog(null, "\nRecomendaciones para hacer ejericicio \n- - Incrementa gradualmente la actividad física. \n - Busca un equilibrio entre cardio y entrenamiento de fuerza. \n - Elige actividades físicas que disfrutes para hacer el ejercicio más sostenible. \n - Considera la posibilidad de consultar a un profesional de la salud o a un entrenador personal para obtener orientación personalizada y segura.");
+        historialRecomendaciones.add(Recomendacion); 
         
     }//GEN-LAST:event_btnEjercicioActionPerformed
 

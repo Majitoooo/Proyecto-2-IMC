@@ -1,8 +1,11 @@
 package proyecto_2;
 
 import javax.swing.JOptionPane;
+import java.util.LinkedList;
 
 public class ConsejosObesidad extends javax.swing.JFrame {
+    
+    private LinkedList<String> historialRecomendaciones = new LinkedList<>();
     
     private String nombre;
     private double resultadoIMC;
@@ -65,13 +68,13 @@ public class ConsejosObesidad extends javax.swing.JFrame {
         txtNombre1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jPanel2.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 30));
 
-        btnHistorial.setText("Ver Historial");
+        btnHistorial.setText("Ver Informe");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
             }
         });
-        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, 60));
+        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 160, 60));
 
         btnSaludable.setText("Vida Saludable");
         btnSaludable.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +102,7 @@ public class ConsejosObesidad extends javax.swing.JFrame {
                 btnGraficosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, 60));
+        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 210, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/WhatsApp Image 2023-06-18 at 11.18.32 AM.jpeg"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 290));
@@ -132,20 +135,38 @@ public class ConsejosObesidad extends javax.swing.JFrame {
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
 
+              StringBuilder mensajeHistorial = new StringBuilder();
+        for (String recomendacion : historialRecomendaciones) {
+            mensajeHistorial.append(recomendacion).append("\n");
+        }
 
+        if (mensajeHistorial.length() == 0) {
+            mensajeHistorial.append("No se ha oprimido ningún botón.");
+        }
+
+        mensajeHistorial.append("\n\n"); // Agregar dos saltos de línea al final
+
+        JOptionPane.showMessageDialog(null, mensajeHistorial.toString());
+        
     }//GEN-LAST:event_btnHistorialActionPerformed
 
     private void btnSaludableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaludableActionPerformed
 
+         String Recomendacion;
+        Recomendacion = " \nRecomendaciones para una vida saludable \n - Implementa el ejercicio para alcanzar un déficit calórico saludable. \n - Consulta a un profesional de la salud para obtener orientación específica para tu situación. \n - Define metas realistas a corto plazo y metas más amplias a largo plazo. \n - Mantente enfocado. \n - Educa a ti mismo sobre nutrición y hábitos alimenticios saludables.";
         JOptionPane.showMessageDialog(null," - Implementa el ejercicio para alcanzar un déficit calórico saludable. \n - Consulta a un profesional de la salud para obtener orientación específica para tu situación. \n - Define metas realistas a corto plazo y metas más amplias a largo plazo. \n - Mantente enfocado. \n - Educa a ti mismo sobre nutrición y hábitos alimenticios saludables.");
-
+         historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnSaludableActionPerformed
 
     private void btnAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlimentacionActionPerformed
 
+         String Recomendacion;
+         Recomendacion= " \nRecomendaciones para una la alimentacion  \n - Aprende a reconocer porciones adecuadas y evita las porciones grandes. \n - Disminuye el consumo de azúcares agregados y grasas saturadas. \n - Opta por fuentes más saludables de carbohidratos y grasas, como frutas, verduras y aceites saludables. \n - Bebe suficiente agua a lo largo del día.";
+                 
         JOptionPane.showMessageDialog(null, " - Aprende a reconocer porciones adecuadas y evita las porciones grandes. \n - Disminuye el consumo de azúcares agregados y grasas saturadas. \n - Opta por fuentes más saludables de carbohidratos y grasas, como frutas, verduras y aceites saludables. \n - Bebe suficiente agua a lo largo del día.");
-        
+                 historialRecomendaciones.add(Recomendacion);
+                 
     }//GEN-LAST:event_btnAlimentacionActionPerformed
 
     private void btnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficosActionPerformed
@@ -157,7 +178,10 @@ public class ConsejosObesidad extends javax.swing.JFrame {
 
     private void btnEjercicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicioActionPerformed
 
+              String Recomendacion;
+        Recomendacion = " \nRecomendaciones para hacer ejercicio   \n  - Comienza con ejercicios de bajo impacto, como caminar o nadar. \n - A medida que te vuelvas más fuerte, considera aumentar gradualmente la intensidad de tus ejercicios. \n - Establece un horario regular para el ejercicio y adhiérete a él tanto como sea posible. \n - La consistencia es clave. ";
         JOptionPane.showMessageDialog(null, " - Comienza con ejercicios de bajo impacto, como caminar o nadar. \n - A medida que te vuelvas más fuerte, considera aumentar gradualmente la intensidad de tus ejercicios. \n - Establece un horario regular para el ejercicio y adhiérete a él tanto como sea posible. \n - La consistencia es clave. ");
+        historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnEjercicioActionPerformed
 

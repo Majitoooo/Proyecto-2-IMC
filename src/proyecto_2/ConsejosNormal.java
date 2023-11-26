@@ -1,9 +1,12 @@
 package proyecto_2;
 
 import javax.swing.JOptionPane;
+import java.util.LinkedList;
 
 public class ConsejosNormal extends javax.swing.JFrame {
     
+    private LinkedList<String> historialRecomendaciones = new LinkedList<>();
+
     private String nombre;
     private double resultadoIMC;
 
@@ -71,13 +74,13 @@ public class ConsejosNormal extends javax.swing.JFrame {
         jLabel3.setText("Tu rango es normal:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
 
-        btnHistorial.setText("Ver Historial");
+        btnHistorial.setText("Ver Informe");
         btnHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistorialActionPerformed(evt);
             }
         });
-        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, 60));
+        jPanel2.add(btnHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 160, 60));
 
         btnSaludable.setText("Vida Saludable");
         btnSaludable.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +108,7 @@ public class ConsejosNormal extends javax.swing.JFrame {
                 btnGraficosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 210, 60));
+        jPanel2.add(btnGraficos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 210, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/WhatsApp Image 2023-06-18 at 11.18.32 AM.jpeg"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 290));
@@ -142,19 +145,37 @@ public class ConsejosNormal extends javax.swing.JFrame {
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
 
+               StringBuilder mensajeHistorial = new StringBuilder();
+        for (String recomendacion : historialRecomendaciones) {
+            mensajeHistorial.append(recomendacion).append("\n");
+        }
 
+        if (mensajeHistorial.length() == 0) {
+            mensajeHistorial.append("No se ha oprimido ningún botón.");
+        }
+
+        mensajeHistorial.append("\n\n"); // Agregar dos saltos de línea al final
+
+        JOptionPane.showMessageDialog(null, mensajeHistorial.toString());
+        
     }//GEN-LAST:event_btnHistorialActionPerformed
 
     private void btnSaludableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaludableActionPerformed
 
+        String Recomendacion;
+        Recomendacion = "\nRecomendaciones para una vida saludable \n -Establece una rutina diaria que incluya tiempo para el trabajo, el descanso y el ocio.\n-Dedica tiempo a actividades que te relajen, ya sea meditación, lectura o simplemente desconectar. \n-Sigue educándote sobre la salud y el bienestar. \n-Asegúrate de seguir durmiendo lo suficiente. \n¡Sigue así!";
+    
         JOptionPane.showMessageDialog(null,"-Establece una rutina diaria que incluya tiempo para el trabajo, el descanso y el ocio.\n-Dedica tiempo a actividades que te relajen, ya sea meditación, lectura o simplemente desconectar. \n-Sigue educándote sobre la salud y el bienestar. \n-Asegúrate de seguir durmiendo lo suficiente. \n¡Sigue así!");
-
+         historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnSaludableActionPerformed
 
     private void btnAlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlimentacionActionPerformed
 
+        String Recomendacion;
+        Recomendacion = " \nRecomendaciones para la alimentacion \n - Aunque estés en tu peso ideal, presta atención a las porciones para evitar excesos innecesarios. \n - Mantente bien hidratado, especialmente si practicas ejercicio regularmente. \n - Incluye una variedad de alimentos en tu dieta para asegurarte de obtener todos los nutrientes necesarios.  \n - ¡Sigue alimentándote bien!";
         JOptionPane.showMessageDialog(null, " - Aunque estés en tu peso ideal, presta atención a las porciones para evitar excesos innecesarios. \n - Mantente bien hidratado, especialmente si practicas ejercicio regularmente. \n - Incluye una variedad de alimentos en tu dieta para asegurarte de obtener todos los nutrientes necesarios.  \n - ¡Sigue alimentándote bien!");
+        historialRecomendaciones.add(Recomendacion);
         
     }//GEN-LAST:event_btnAlimentacionActionPerformed
 
@@ -167,8 +188,11 @@ public class ConsejosNormal extends javax.swing.JFrame {
 
     private void btnEjercicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicioActionPerformed
 
+        String Recomendacion;
+        Recomendacion ="\nRecomendaciones para hacer ejercicio  \n - Aunque ya estés en buena forma, establece metas realistas para seguir desafiándote. \n - Introduce variedad en tu rutina de ejercicios. \n - El descanso es tan importante como el ejercicio. \n - Asegúrate de incluir días de descanso activo, como caminatas suaves o yoga";
         JOptionPane.showMessageDialog(null, " - Aunque ya estés en buena forma, establece metas realistas para seguir desafiándote. \n - Introduce variedad en tu rutina de ejercicios. \n - El descanso es tan importante como el ejercicio. \n - Asegúrate de incluir días de descanso activo, como caminatas suaves o yoga");
-        
+         historialRecomendaciones.add(Recomendacion);
+         
     }//GEN-LAST:event_btnEjercicioActionPerformed
 
     public static void main(String args[]) {
